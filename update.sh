@@ -2,9 +2,10 @@
 script -a -e -c "set -x; echo this is logging ..;
 "
 time="360"   #time till server restart
-delay="370"  #delay time so the server finish shutdowning successfully recomendet at least 10s
 timetext="5 Mins"  #time in minutes
 chat="Server will be down for 30 mins after shutdown for maintenance!" #inform your player that your server entering in maintancance!
+world1=/path/to/azerothcore realm1 #directory to your main realm
+world2=/path/to/world2 realm2 #directory to your second realm
 
 ############Realm - 1 Update##########
 # send key to stop Realm1 - Blizzlike#
@@ -37,12 +38,12 @@ tmux send-keys -t world-session ".server shutdown $time" ENTER \;
   printf "\a"
 } 2>/dev/null
 
-    sleep $delay
+    sleep 370 #Edit this if you change server shutdown time! Example 360 second to shutdown +10 sek = 370
     tmux kill-session -t auth-session
 	tmux kill-session -t world-session
         echo "Blizzlike realm sucksessfuly shutdown!"
 sleep 2
-cd /path/to/azerothcore-wotlk
+cd $world1
 
 	
 git pull
@@ -65,7 +66,7 @@ sleep 5
 #Git Pull Modules auto update#
 ##############################
 #Anticheat
-cd /path/to/azerothcore-wotlk/modules/mod-anticheat
+cd $world1/modules/mod-anticheat
 
 git pull
     if [[ $? -ne 0 ]]; then
@@ -76,7 +77,7 @@ sleep 5
         echo "Downloading updates for Anticheat!"
 
 #Multi Client Check
-cd /path/to/azerothcore-wotlk/modules/mod-multi-client-check
+cd $world1/modules/mod-multi-client-check
 
 git pull
     if [[ $? -ne 0 ]]; then
@@ -87,7 +88,7 @@ sleep 5
         echo "Downloading updates for Multi Client Check!"
 
 #Cmake Compiler
-cd /path/to/azerothcore-wotlk
+cd world1
 ./acore.sh compiler build
     if [[ $? -ne 0 ]]; then
         exit $?
@@ -106,7 +107,7 @@ sleep 5
 echo "Blizzlike realm updated and started use 'tmux attach -t world-session!' to attach it!"
 
 #Realm - 2 Auto Update
-cd /path/to/world2
+cd world2
 
 ###############################
 # send key to stop Realm2 - 5x#
@@ -139,10 +140,10 @@ tmux send-keys -t world-session2 ".server shutdown $time" ENTER \;
   printf "\a"
 } 2>/dev/null
 
-    sleep $delay
+    sleep 370 #Edit this if you change server shutdown time! Example 360 second to shutdown +10 sek = 370
 
 	tmux kill-session -t world-session2
-        echo "Realm 2 sucksessfuly shutdown!"
+        echo "Realm Zul 5x sucksessfuly shutdown!"
 
 ######################
 #Git Pull Auto update#
@@ -169,7 +170,7 @@ set -e
 #Git Pull Modules auto update#
 ##############################
 #Anticheat
-cd /path/to/world2/modules/mod-anticheat
+cd $world2/modules/mod-anticheat
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -180,7 +181,7 @@ cd /path/to/world2/modules/mod-anticheat
 			echo "Downloading updates for Anticheat!"
 
 #Eluna Engine
-cd /path/to/world2/modules/mod-eluna
+cd $world2/modules/mod-eluna
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -191,7 +192,7 @@ cd /path/to/world2/modules/mod-eluna
 			echo "Downloading updates for Eluna Engine!"
 
 #PVP Titles
-cd /path/to/world2/modules/mod-pvp-titles
+cd $world2/modules/mod-pvp-titles
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -202,7 +203,7 @@ cd /path/to/world2/modules/mod-pvp-titles
 			echo "Downloading updates for PVP Titles!"
 
 #Auto Balance
-cd /path/to/world2/modules/mod-autobalance
+cd $world2/modules/mod-autobalance
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -212,7 +213,7 @@ cd /path/to/world2/modules/mod-autobalance
 		sleep 5
 			echo "Downloading updates for Auto Balance!"
 #GuildHouse
-cd /path/to/world2/modules/mod-guildhouse
+cd $world2/modules/mod-guildhouse
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -222,7 +223,7 @@ cd /path/to/world2/modules/mod-guildhouse
 		sleep 5
 			echo "Downloading updates for GuildHouse!"
 #Reward Player Time
-cd /path/to/world2/modules/mod-reward-played-time
+cd $world2/modules/mod-reward-played-time
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -233,7 +234,7 @@ cd /path/to/world2/modules/mod-reward-played-time
 			echo "Downloading updates for Reward Player Time	!"
 
 #CFBG
-cd /path/to/world2/modules/mod-cfbg
+cd $world2/modules/mod-cfbg
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -243,7 +244,7 @@ cd /path/to/world2/modules/mod-cfbg
 		sleep 5
 			echo "Downloading updates for CFBG!"
 #Auto Learn Spells
-cd /path/to/world2/modules/mod-learn-spells
+cd $world2/modules/mod-learn-spells
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -253,7 +254,7 @@ cd /path/to/world2/modules/mod-learn-spells
 		sleep 5
 			echo "Downloading updates for Auto Learn Spells!"
 #Transmog
-cd /path/to/world2/modules/mod-transmog
+cd $world2/modules/mod-transmog
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -263,7 +264,7 @@ cd /path/to/world2/modules/mod-transmog
 		sleep 5
 			echo "Downloading updates for Transmog!"
 #Weekend XP
-cd /path/to/world2/modules/mod-weekend-xp
+cd $world2/modules/mod-weekend-xp
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -273,7 +274,7 @@ cd /path/to/world2/modules/mod-weekend-xp
 		sleep 5
 			echo "Downloading updates for Weekend XPt!"
 #AH Bot
-cd /path/to/world2/modules/mod-ah-bot
+cd $world2/modules/mod-ah-bot
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -283,7 +284,7 @@ cd /path/to/world2/modules/mod-ah-bot
 		sleep 5
 			echo "Downloading updates for AH Bot!"
 #Duel Reset
-cd /path/to/world2/modules/mod-duel-reset
+cd $world2/modules/mod-duel-reset
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -294,7 +295,7 @@ cd /path/to/world2/modules/mod-duel-reset
 			echo "Downloading updates for Duel Reset!"
 
 #Multi Client Check
-cd /path/to/world2/modules/mod-multi-client-check
+cd $world2/modules/mod-multi-client-check
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -304,7 +305,7 @@ cd /path/to/world2/modules/mod-multi-client-check
 		sleep 5
 			echo "Downloading updates for Multi Client Check!"
 #WorGoblin
-cd /path/to/world2/modules/mod-worgoblin
+cd $world2/modules/mod-worgoblin
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -317,7 +318,7 @@ cd /path/to/world2/modules/mod-worgoblin
 ################
 #Cmake Compiler#
 ################
-cd /path/to/world2
+cd world2
     ./acore.sh compiler build
     if [[ $? -ne 0 ]]; then
                 exit $?
@@ -333,6 +334,8 @@ cd /path/to/world2
             exit $?
         fi
     sleep 30
-echo "Realm2 realm updated and started use 'tmux attach -t world-session!' to attach it!"
+echo "Zul 5x realm updated and started use 'tmux attach -t world-session!' to attach it!"
 "UpdateLog.log
+
+
 
