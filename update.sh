@@ -42,7 +42,7 @@ tmux send-keys -t world-session ".server shutdown $time" ENTER \;
 	tmux kill-session -t world-session
         echo "Blizzlike realm sucksessfuly shutdown!"
 sleep 2
-cd /home/tanados/azerothcore-wotlk
+cd /path/to/azerothcore-wotlk
 
 	
 git pull
@@ -65,7 +65,7 @@ sleep 5
 #Git Pull Modules auto update#
 ##############################
 #Anticheat
-cd /home/tanados/azerothcore-wotlk/modules/mod-anticheat
+cd /path/to/azerothcore-wotlk/modules/mod-anticheat
 
 git pull
     if [[ $? -ne 0 ]]; then
@@ -76,7 +76,7 @@ sleep 5
         echo "Downloading updates for Anticheat!"
 
 #Multi Client Check
-cd /home/tanados/azerothcore-wotlk/modules/mod-multi-client-check
+cd /path/to/azerothcore-wotlk/modules/mod-multi-client-check
 
 git pull
     if [[ $? -ne 0 ]]; then
@@ -87,7 +87,7 @@ sleep 5
         echo "Downloading updates for Multi Client Check!"
 
 #Cmake Compiler
-cd /home/tanados/azerothcore-wotlk
+cd /path/to/azerothcore-wotlk
 ./acore.sh compiler build
     if [[ $? -ne 0 ]]; then
         exit $?
@@ -106,7 +106,7 @@ sleep 5
 echo "Blizzlike realm updated and started use 'tmux attach -t world-session!' to attach it!"
 
 #Realm - 2 Auto Update
-cd /home/tanados/world2
+cd /path/to/world2
 
 ###############################
 # send key to stop Realm2 - 5x#
@@ -142,7 +142,7 @@ tmux send-keys -t world-session2 ".server shutdown $time" ENTER \;
     sleep $delay
 
 	tmux kill-session -t world-session2
-        echo "Realm Zul 5x sucksessfuly shutdown!"
+        echo "Realm 2 sucksessfuly shutdown!"
 
 ######################
 #Git Pull Auto update#
@@ -169,7 +169,7 @@ set -e
 #Git Pull Modules auto update#
 ##############################
 #Anticheat
-cd /home/tanados/world2/modules/mod-anticheat
+cd /path/to/world2/modules/mod-anticheat
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -180,7 +180,7 @@ cd /home/tanados/world2/modules/mod-anticheat
 			echo "Downloading updates for Anticheat!"
 
 #Eluna Engine
-cd /home/tanados/world2/modules/mod-eluna
+cd /path/to/world2/modules/mod-eluna
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -191,7 +191,7 @@ cd /home/tanados/world2/modules/mod-eluna
 			echo "Downloading updates for Eluna Engine!"
 
 #PVP Titles
-cd /home/tanados/world2/modules/mod-pvp-titles
+cd /path/to/world2/modules/mod-pvp-titles
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -202,7 +202,7 @@ cd /home/tanados/world2/modules/mod-pvp-titles
 			echo "Downloading updates for PVP Titles!"
 
 #Auto Balance
-cd /home/tanados/world2/modules/mod-autobalance
+cd /path/to/world2/modules/mod-autobalance
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -212,7 +212,7 @@ cd /home/tanados/world2/modules/mod-autobalance
 		sleep 5
 			echo "Downloading updates for Auto Balance!"
 #GuildHouse
-cd /home/tanados/world2/modules/mod-guildhouse
+cd /path/to/world2/modules/mod-guildhouse
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -222,7 +222,7 @@ cd /home/tanados/world2/modules/mod-guildhouse
 		sleep 5
 			echo "Downloading updates for GuildHouse!"
 #Reward Player Time
-cd /home/tanados/world2/modules/mod-reward-played-time
+cd /path/to/world2/modules/mod-reward-played-time
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -233,7 +233,7 @@ cd /home/tanados/world2/modules/mod-reward-played-time
 			echo "Downloading updates for Reward Player Time	!"
 
 #CFBG
-cd /home/tanados/world2/modules/mod-cfbg
+cd /path/to/world2/modules/mod-cfbg
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -243,7 +243,7 @@ cd /home/tanados/world2/modules/mod-cfbg
 		sleep 5
 			echo "Downloading updates for CFBG!"
 #Auto Learn Spells
-cd /home/tanados/world2/modules/mod-learn-spells
+cd /path/to/world2/modules/mod-learn-spells
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -253,7 +253,7 @@ cd /home/tanados/world2/modules/mod-learn-spells
 		sleep 5
 			echo "Downloading updates for Auto Learn Spells!"
 #Transmog
-cd /home/tanados/world2/modules/mod-transmog
+cd /path/to/world2/modules/mod-transmog
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -263,7 +263,7 @@ cd /home/tanados/world2/modules/mod-transmog
 		sleep 5
 			echo "Downloading updates for Transmog!"
 #Weekend XP
-cd /home/tanados/world2/modules/mod-weekend-xp
+cd /path/to/world2/modules/mod-weekend-xp
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -273,7 +273,7 @@ cd /home/tanados/world2/modules/mod-weekend-xp
 		sleep 5
 			echo "Downloading updates for Weekend XPt!"
 #AH Bot
-cd /home/tanados/world2/modules/mod-ah-bot
+cd /path/to/world2/modules/mod-ah-bot
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -283,7 +283,7 @@ cd /home/tanados/world2/modules/mod-ah-bot
 		sleep 5
 			echo "Downloading updates for AH Bot!"
 #Duel Reset
-cd /home/tanados/world2/modules/mod-duel-reset
+cd /path/to/world2/modules/mod-duel-reset
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -294,7 +294,7 @@ cd /home/tanados/world2/modules/mod-duel-reset
 			echo "Downloading updates for Duel Reset!"
 
 #Multi Client Check
-cd /home/tanados/world2/modules/mod-multi-client-check
+cd /path/to/world2/modules/mod-multi-client-check
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -304,7 +304,7 @@ cd /home/tanados/world2/modules/mod-multi-client-check
 		sleep 5
 			echo "Downloading updates for Multi Client Check!"
 #WorGoblin
-cd /home/tanados/world2/modules/mod-worgoblin
+cd /path/to/world2/modules/mod-worgoblin
 
     git pull
     if [[ $? -ne 0 ]]; then
@@ -317,7 +317,7 @@ cd /home/tanados/world2/modules/mod-worgoblin
 ################
 #Cmake Compiler#
 ################
-cd /home/tanados/world2
+cd /path/to/world2
     ./acore.sh compiler build
     if [[ $? -ne 0 ]]; then
                 exit $?
@@ -333,6 +333,6 @@ cd /home/tanados/world2
             exit $?
         fi
     sleep 30
-echo "Zul 5x realm updated and started use 'tmux attach -t world-session!' to attach it!"
+echo "Realm2 realm updated and started use 'tmux attach -t world-session!' to attach it!"
 "UpdateLog.log
 
