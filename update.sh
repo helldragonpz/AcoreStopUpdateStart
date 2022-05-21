@@ -178,6 +178,17 @@ set -e
 ##############################
 #Git Pull Modules auto update#
 ##############################
+#Account Achivment
+cd /home/tanados/world2/modules/mod-account-achievements
+
+    git pull
+    if [[ $? -ne 0 ]]; then
+        exit $?
+                        echo "Git pull error check log files!"
+    fi
+                sleep 5
+                        echo "Downloading updates for Account Achivment!"
+
 #Anticheat
 cd $world2/modules/mod-anticheat
 
