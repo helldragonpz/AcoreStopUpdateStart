@@ -10,7 +10,7 @@ exec 1>/log/Update_$new.log 2>&1
 ##################
 #     Configs    #
 ##################
-time="320"   #time till server restart
+time="300"   #time till server restart
 timetext="$((time / 60))"
 [ $time -gt 119 ] && timetext="${timetext} minutes" || timetext="${timetext} minute"
 chat="Server will be down for 30 mins after shutdown for maintenance!" #inform your player that your server entering in maintancance!
