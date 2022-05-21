@@ -10,7 +10,7 @@ exec 1>/log/Update_$new.log 2>&1
 ##################
 #     Configs    #
 ##################
-time="360"   #time till server restart
+time="320"   #time till server restart
 timetext="5 Mins"  #time in minutes
 chat="Server will be down for 30 mins after shutdown for maintenance!" #inform your player that your server entering in maintancance!
 world1="/path/to/azerothcore realm1" #directory to your main realm
@@ -21,6 +21,7 @@ world2="/path/to/world2 realm2" #directory to your second realm
 ######################################
 tmux send-keys -t world-session ".nameannounce $chat" ENTER \; 
     if [[ $? -ne 0 ]]; then
+
         exit $?
         echo "Aunnonce is not send!"
     fi
