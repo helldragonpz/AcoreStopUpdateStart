@@ -11,7 +11,8 @@ exec 1>/log/Update_$new.log 2>&1
 #     Configs    #
 ##################
 time="320"   #time till server restart
-timetext="5 Mins"  #time in minutes
+timetext="$((time / 60))"
+[ $time -gt 119 ] && timetext="${timetext} minutes" || timetext="${timetext} minute"
 chat="Server will be down for 30 mins after shutdown for maintenance!" #inform your player that your server entering in maintancance!
 world1="/path/to/azerothcore realm1" #directory to your main realm
 world2="/path/to/world2 realm2" #directory to your second realm
