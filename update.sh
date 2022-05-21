@@ -1,6 +1,12 @@
 #!/bin/bash
-script -a -e -c "set -x; echo this is logging ..;
-"
+###################
+#      Logs       #
+###################
+new=$(date +%d%m%y)
+exec 3>&1 4>&2
+trap 'exec 2>&4 1>&3' 0 1 2 3
+exec 1>/log/Update_$new.log 2>&1
+# Everything below will go to the file 'log.out':
 time="360"   #time till server restart
 timetext="5 Mins"  #time in minutes
 chat="Server will be down for 30 mins after shutdown for maintenance!" #inform your player that your server entering in maintancance!
