@@ -340,8 +340,7 @@ cd world2
             exit $?
         fi
     sleep 30
-echo "Zul 5x realm updated and started use 'tmux attach -t world-session!' to attach it!"
-"UpdateLog.log
 
+echo "Zul 5x realm updated and started use 'tmux attach -t world-session!' to attach it!"
 
 
