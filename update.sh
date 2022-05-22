@@ -49,7 +49,7 @@ tmux send-keys -t world-session ".server shutdown $time" ENTER \;
   printf "\a"
 } 2>/dev/null
 
-    sleep 370 #Edit this if you change server shutdown time! Example 360 second to shutdown +10 sek = 370
+    sleep 320 #Edit this if you change server shutdown time! Example 360 second to shutdown +10 sek = 370
     tmux kill-session -t auth-session
     tmux kill-session -t world-session
         echo "Blizzlike realm sucksessfuly shutdown!"
@@ -151,7 +151,7 @@ tmux send-keys -t world-session2 ".server shutdown $time" ENTER \;
   printf "\a"
 } 2>/dev/null
 
-    sleep 370 #Edit this if you change server shutdown time! Example 360 second to shutdown +10 sek = 370
+    sleep 320 #Edit this if you change server shutdown time! Example 360 second to shutdown +10 sek = 370
 
     tmux kill-session -t world-session2
         echo "Realm Zul 5x sucksessfuly shutdown!"
