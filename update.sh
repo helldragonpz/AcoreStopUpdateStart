@@ -10,9 +10,12 @@ exec 1>/log/Update_$new.log 2>&1
 ##################
 #     Configs    #
 ##################
-time="300"   #time till server restart
-timetext="$((time / 60))"
-[ $time -gt 119 ] && timetext="${timetext} minutes" || timetext="${timetext} minute"
+[ -z $1 ] && time=300 || time=$1
+[ $time -gt 60 ] && timetext="$((time / 60)) minutes" || timetext="1 minute"
+
+echo "Time: $time"
+echo "Timetext: $timetext"
+
 chat="Server will be down for 30 mins after shutdown for maintenance!" #inform your player that your server entering in maintancance!
 world1="/path/to/azerothcore realm1" #directory to your main realm
 world2="/path/to/world2 realm2" #directory to your second realm
