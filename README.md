@@ -34,14 +34,7 @@ modules_world2=(
 ```
 3. Make your `update.sh` and `start.sh` runable by using `sudo chmod +x update.sh` and `sudo chmod +x start.sh` at a webhook endpoint (see below)
 5. Use `crontab -e` and edit it to automate script. Here is an example: ` 0 4 * * 5 /usr/bin/env bash /root/wow/update.sh ` 
-
-### 2. Specifying a Webhook URL within `discord.sh`
-
-There are three ways to point `discord.sh` at a webhook endpoint, in order of priority that `discord.sh` takes:
-
-1. Pass the webhook URL as an argument to `discord.sh` using `--webhook-url`
-2. Set an environment variable called `$DISCORD_WEBHOOK`
-3. Create a file called `.webhook` in the same directory as `discord.sh`, containing only the webhook URL
+6. cd ~/wow/discord - Edit path to your discord folder
 
 ### 2. Use the script
 
