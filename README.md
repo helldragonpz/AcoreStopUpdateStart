@@ -1,3 +1,10 @@
+<h4 align="center">
+  <br>
+  <a href="https://github.com/helldragonpz/AcoreStopUpdateStart"><img src="https://wow.tanados.com/launcher/logo.gif" alt="discord.sh"></a>
+  <br>
+  <br>
+</h4>
+
 # AcoreStopUpdateStart
 This an small azerothcore stop/update/start script
 If you run ./update.sh (or whatever you name it), it'll default to 300 seconds, if you run ./script.sh 900 for example it'll use 900 seconds instead.
