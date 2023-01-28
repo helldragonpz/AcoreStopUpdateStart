@@ -8,7 +8,10 @@
 # AcoreStopUpdateStart
 This an small azerothcore stop/update/start script
 If you run ./update.sh (or whatever you name it), it'll default to 300 seconds, if you run ./script.sh 900 for example it'll use 900 seconds instead.
-
+Name:   AcoreStopUpdateStart
+Repository:  https://github.com/helldragonpz/AcoreStopUpdateStart
+Download:   https://github.com/helldragonpz/AcoreStopUpdateStart/archive/refs/heads/main.zip
+License:   MIT
 ## Install
 
 ### 1. Setting up a update.sh
